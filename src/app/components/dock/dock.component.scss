@@ -1,0 +1,16 @@
+img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(100%);
+  opacity: .9;
+}
+
+.blur {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation-duration: 750ms;
+  z-index: 1;
+}

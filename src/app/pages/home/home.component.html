@@ -1,0 +1,144 @@
+
+<p-avatar
+  image="pfp.png"
+  shape="circle"
+  size="xlarge"
+></p-avatar>
+
+<h1 class="font-bold text-5xl">Joel Revuelta</h1>
+<h3>Software developer</h3>
+
+<!-- <p-button class="select-text" label="joel.revuel@gmail.com" icon="pi pi-envelope" /> -->
+
+<div class="flex gap-3 mt-3">
+  <p-button rounded text raised>
+    <a href="mailto: joel.revuel@gmail.com">
+      <img src="email.svg" alt="email" class="svg-white">
+    </a>
+  </p-button>
+  <p-button rounded text raised>
+    <a href="https://www.linkedin.com/in/joel-revuelta" target="_blank">
+      <img src="linkedin.svg" alt="linkedin" class="svg-white">
+    </a>
+  </p-button>
+  <p-button rounded text raised>
+    <a href="https://github.com/Joel-Revuelta" target="_blank">
+      <img src="github.svg" alt="github" class="svg-white">
+    </a>
+  </p-button>
+  <p-button rounded text raised>
+    <a href="Joel Revuelta.pdf" target="_blank">
+      <img src="file.svg" alt="CV" class="svg-white">
+    </a>
+  </p-button>
+</div>
+
+
+<!-- EDUCATION -->
+
+<h1 class="section-title">Education</h1>
+
+<p-card>
+  <div class="flex justify-content-between">
+    <div class="flex gap-3">
+      <img src="epi.png" class="h-2rem">
+      <h2 class="mb-0 mt-1">EPITECH</h2>
+    </div>
+    <h4 class="mt-2">2022-2027</h4>
+  </div>
+  <h4 class="mb-2 ml-6">B. Sc. and Master's Degree in Information Technologies</h4>
+</p-card>
+
+
+<!-- EXPERIENCE -->
+
+<h1 class="section-title">Experience</h1>
+
+<p-accordion class="w-full">
+  <p-accordionTab>
+    <ng-template pTemplate="header">
+      <div class="flex justify-content-between w-full mt-1">
+        <div class="flex gap-3 mt-3">
+          <img src="ntt.jpeg" class="h-2rem">
+          <h2 class="mb-0 mt-0">NTT Data - Web developer intern</h2>
+        </div>
+        <h4 class="mr-3">2023</h4>
+      </div>
+    </ng-template>
+    <p class="m-0">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </p-accordionTab>
+</p-accordion>
+
+
+<!-- PROJECTS -->
+
+<h1 class="section-title" #projects>Projects</h1>
+
+<div class="flex flex-column gap-5">
+  <p-card>
+    <div class="grid">
+      <img src="CityMatcher.png" class="project-image col-12 lg:col-6">
+      <div class="col-12 lg:col-6 px-3 flex flex-column">
+        <div>
+          <h2 class="font-bold">City Matcher</h2>
+          <p>Winner project of the 2024 Extia Hackathon.</p>
+          <p>Angular project that uses AI to search for the ideal city matching the user criteria</p>
+        </div>
+        <div class="mt-auto flex justify-content-between">
+          <img src="Angular.ico" alt="Angular" class="h-2rem">
+          <p-button text icon="pi pi-external-link "/>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<!-- STACK -->
+
+<h1 class="section-title" #stack>Stack</h1>
+
+<h2 class="mb-4">Programming languages</h2>
+<div class="flex flex-wrap gap-3">
+  @for (item of programingLanguages; track $index) {
+    <p-tag [style]="{ height: '50px' }">
+      <img [src]="item.image" class="h-full mr-3">
+      <h3 class="mr-2">{{ item.name }}</h3>
+    </p-tag>
+  }
+</div>
+
+<h2 class="mb-4 mt-5">Frontend</h2>
+<div class="flex flex-wrap gap-3">
+  @for (item of frontend; track $index) {
+    <p-tag [style]="{ height: '50px' }">
+      <img [src]="item.image" class="h-full mr-3">
+      <h3 class="mr-2">{{ item.name }}</h3>
+    </p-tag>
+  }
+</div>
+
+<h2 class="mb-4 mt-5">Backend</h2>
+<div class="flex flex-wrap gap-3">
+  @for (item of backend; track $index) {
+    <p-tag [style]="{ height: '50px' }">
+      <img [src]="item.image" class="h-full mr-3">
+      <h3 class="mr-2">{{ item.name }}</h3>
+    </p-tag>
+  }
+</div>
+
+<h2 class="mb-4 mt-5">Others</h2>
+<div class="flex flex-wrap gap-3">
+  @for (item of others; track $index) {
+    <p-tag [style]="{ height: '50px' }">
+      <img [src]="item.image" class="h-full mr-3">
+      <h3 class="mr-2">{{ item.name }}</h3>
+    </p-tag>
+  }
+</div>
+
+
+<div style="margin-top: 500px;"></div>

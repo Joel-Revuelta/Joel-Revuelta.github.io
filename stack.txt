@@ -1,0 +1,16 @@
+
+- C
+- C++
+- Angular
+- Python
+- Typescript
+- Javascript
+- Git
+- Html
+- Css
+- Haskell
+- Assembly
+- Java
+- Nodejs
+- Linux
+- DevOps
