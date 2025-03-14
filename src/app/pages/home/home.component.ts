@@ -70,6 +70,10 @@ export class HomeComponent implements OnInit {
       image: 'Angular.ico'
     },
     {
+      name: 'Next.js',
+      image: 'Nextjs.png'
+    },
+    {
       name: 'HTML',
       image: 'HTML5.png'
     },
@@ -91,6 +95,14 @@ export class HomeComponent implements OnInit {
     {
       name: 'Node.js',
       image: 'Nodejs.png'
+    },
+    {
+      name: 'Express.js',
+      image: 'Expressjs.png'
+    },
+    {
+      name: 'Next.js',
+      image: 'Nextjs.png'
     },
     {
       name: 'Python',
