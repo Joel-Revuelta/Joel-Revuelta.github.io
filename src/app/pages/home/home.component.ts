@@ -101,10 +101,6 @@ export class HomeComponent implements OnInit {
       image: 'Expressjs.png'
     },
     {
-      name: 'Next.js',
-      image: 'Nextjs.png'
-    },
-    {
       name: 'Python',
       image: 'Python.png'
     },
