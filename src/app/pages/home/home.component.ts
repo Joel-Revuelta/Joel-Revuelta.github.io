@@ -51,16 +51,16 @@ export class HomeComponent implements OnInit {
       image: 'JavaScript.png'
     },
     {
-      name: 'Haskell',
-      image: 'Haskell.png'
-    },
-    {
-      name: 'Assembly',
-      image: 'Assembly.png'
-    },
-    {
       name: 'Java',
       image: 'Java.png'
+    },
+    {
+      name: 'Go',
+      image: 'Go.png'
+    },
+    {
+      name: 'Haskell',
+      image: 'Haskell.png'
     }
   ];
 
@@ -97,16 +97,24 @@ export class HomeComponent implements OnInit {
       image: 'Nodejs.png'
     },
     {
+      name: 'NestJS',
+      image: 'nestjs.svg'
+    },
+    {
       name: 'Express.js',
       image: 'Expressjs.png'
     },
     {
-      name: 'Python',
-      image: 'Python.png'
+      name: 'FastAPI (Python)',
+      image: 'fastapi.svg'
     },
     {
-      name: 'Java',
-      image: 'Java.png'
+      name: 'Spring Boot (Java)',
+      image: 'spring.png'
+    },
+    {
+      name: 'Gin (Go)',
+      image: 'gin.png'
     }
   ];
 
