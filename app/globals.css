@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #121212;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom Utilities from Angular */
+.svg-white {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(100%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.svg-white:hover {
+  opacity: 1;
+}
+
+.project-image {
+  aspect-ratio: 7 / 4;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  background-color: #1a1a1a;
+}
