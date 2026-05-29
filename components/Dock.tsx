@@ -34,6 +34,7 @@ export default function Dock() {
           <a 
             key={idx} 
             href={item.href}
+            aria-label={`Navigate to ${item.label} section`}
             className="flex flex-col items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-xl hover:bg-white/10 transition-colors group relative"
           >
             {/* Tooltip */}

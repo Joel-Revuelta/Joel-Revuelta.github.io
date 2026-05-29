@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://joel-revuelta.github.io/sitemap.xml
