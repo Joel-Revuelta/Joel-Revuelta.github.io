@@ -8,8 +8,7 @@ import { projects } from '../data';
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
   
-  // Show 2 projects initially to keep the page short, reveal the rest when clicked.
-  const INITIAL_LIMIT = 2;
+  const INITIAL_LIMIT = 3;
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_LIMIT);
 
   return (

@@ -67,5 +67,13 @@ export const projects: Project[] = [
     techIcon: '/Python.png',
     techAlt: 'Python',
     link: 'https://github.com/Joel-Revuelta/Torch'
+  },
+  {
+    title: 'Syscall Sandbox',
+    description: 'A Linux syscall sandbox combining an eBPF monitor, a kernel module, and ptrace to observe, track, and block system calls across entire process trees. Hooks the raw_syscalls and sched_process_fork tracepoints and exposes control through /proc/syscall_sandbox.',
+    image: '/Linux-kernel.png',
+    techIcon: '/C.png',
+    techAlt: 'C',
+    link: 'https://github.com/Joel-Revuelta/syscall-sandbox'
   }
 ];
