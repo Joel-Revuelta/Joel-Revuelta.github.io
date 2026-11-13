@@ -37,7 +37,8 @@ export const stackGroups: StackGroup[] = [
       { name: 'CMake', image: '/icons/cmake.svg' },
       { name: 'Conan', image: '/icons/conan.svg' },
       { name: 'CUDA', image: '/icons/nvidia.svg' },
-      { name: 'SFML', image: '/icons/sfml.svg' }
+      { name: 'SFML', image: '/icons/sfml.svg' },
+      { name: 'AI integration', image: '/icons/ai.svg' }
     ]
   },
   {
@@ -59,6 +60,21 @@ export const projects: Project[] = [
     imageHeight: 1080,
     techIcons: [{ image: '/C++.png', alt: 'C++' }],
     link: 'https://github.com/Joel-Revuelta/ray-tracer'
+  },
+  {
+    title: 'FAS',
+    subtitle: 'AI contract generation for freelancers and small agencies in Spain.',
+    description: 'FAS turns client video calls into contract drafts. It joins the call, transcribes the conversation and uses AI to extract the agreed terms into a structured service agreement both sides can review before signing. Built with Go, PostgreSQL and Next.js.',
+    image: '/FAS.webp',
+    imageWidth: 1600,
+    imageHeight: 1000,
+    techIcons: [
+      { image: '/Go.png', alt: 'Go' },
+      { image: '/icons/postgresql.svg', alt: 'PostgreSQL' },
+      { image: '/Nextjs.png', alt: 'Next.js' },
+      { image: '/icons/ai.svg', alt: 'AI' }
+    ],
+    link: 'https://fas-ai.net'
   },
   {
     title: 'AREA',

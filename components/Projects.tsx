@@ -16,7 +16,7 @@ export default function Projects() {
     <section id="projects" className="mt-28 scroll-mt-24 md:mt-36">
       <SectionTitle>Selected work</SectionTitle>
       <p className="-mt-4 mb-8 max-w-xl text-sm leading-relaxed text-muted md:-mt-6 md:mb-10">
-        Five projects across rendering, systems and the web.
+        Six projects across AI, rendering, systems and the web.
       </p>
 
       <div id="project-list" className="flex flex-col gap-10">
