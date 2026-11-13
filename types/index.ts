@@ -9,13 +9,17 @@ export interface DockItem {
   href: string;
 }
 
+export interface TechIcon {
+  image: string;
+  alt: string;
+}
+
 export interface Project {
   title: string;
   subtitle?: string;
   description: string;
   image: string;
-  techIcon: string;
-  techAlt: string;
+  techIcons: TechIcon[];
   link: string;
 }
 

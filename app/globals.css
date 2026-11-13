@@ -32,11 +32,3 @@ body {
 .svg-white:hover {
   opacity: 1;
 }
-
-.project-image {
-  aspect-ratio: 7 / 4;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  object-fit: contain;
-  background-color: #1a1a1a;
-}

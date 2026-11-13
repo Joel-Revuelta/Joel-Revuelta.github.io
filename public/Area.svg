@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="AREA automation platform illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14121f"/>
+      <stop offset="0.5" stop-color="#0d0d12"/>
+      <stop offset="1" stop-color="#0b0f16"/>
+    </linearGradient>
+
+    <radialGradient id="violetGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amberGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f59e0b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.11"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <linearGradient id="hubGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <linearGradient id="hubStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.5" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <linearGradient id="cyanLine" gradientUnits="userSpaceOnUse" x1="372" y1="450" x2="1142" y2="450">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="0.55" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="violetLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="amberLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#f59e0b" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#ffffff" opacity="0.05"/>
+    </pattern>
+
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lineGlow" filterUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nodeShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <ellipse cx="800" cy="450" rx="620" ry="420" fill="url(#violetGlow)"/>
+  <ellipse cx="240" cy="690" rx="420" ry="300" fill="url(#cyanGlow)"/>
+  <ellipse cx="1390" cy="220" rx="360" ry="260" fill="url(#amberGlow)"/>
+
+  <!-- Faint orbit rings behind the hub -->
+  <circle cx="800" cy="450" r="330" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1.5"/>
+  <circle cx="800" cy="450" r="430" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1.5"/>
+  <circle cx="800" cy="450" r="245" fill="none" stroke="#8b5cf6" stroke-opacity="0.12" stroke-width="1.5" stroke-dasharray="3 10"/>
+
+  <!-- Connections -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 372 450 C 520 450, 600 450, 706 450" stroke="url(#cyanLine)" stroke-width="4" filter="url(#lineGlow)"/>
+    <path d="M 894 450 C 1010 450, 1010 260, 1142 260" stroke="url(#violetLine)" stroke-width="4" filter="url(#lineGlow)"/>
+    <path d="M 894 450 C 1010 450, 1010 450, 1142 450" stroke="url(#cyanLine)" stroke-width="4" filter="url(#lineGlow)"/>
+    <path d="M 894 450 C 1010 450, 1010 640, 1142 640" stroke="url(#amberLine)" stroke-width="4" filter="url(#lineGlow)"/>
+  </g>
+
+  <!-- Pulses along the connections -->
+  <g fill="#ffffff">
+    <circle cx="540" cy="450" r="4.5" opacity="0.9"/>
+    <circle cx="1030" cy="350" r="3.5" opacity="0.75"/>
+    <circle cx="1030" cy="450" r="3.5" opacity="0.75"/>
+    <circle cx="1030" cy="548" r="3.5" opacity="0.75"/>
+  </g>
+
+  <!-- Trigger node -->
+  <g filter="url(#nodeShadow)">
+    <rect x="232" y="382" width="136" height="136" rx="34" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <g transform="translate(300 450)" stroke="#22d3ee" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <rect x="-30" y="-22" width="60" height="44" rx="8"/>
+    <path d="M -30 -16 L 0 6 L 30 -16"/>
+  </g>
+  <text x="300" y="566" fill="#7c7c8c" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="4" text-anchor="middle">TRIGGER</text>
+
+  <!-- Hub node -->
+  <g filter="url(#nodeShadow)">
+    <rect x="708" y="358" width="184" height="184" rx="46" fill="url(#hubGlass)" stroke="url(#hubStroke)" stroke-width="2"/>
+  </g>
+  <g transform="translate(800 428)" filter="url(#softGlow)">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#22d3ee" stroke-width="4"/>
+    <circle cx="0" cy="0" r="10" fill="#8b5cf6"/>
+    <path d="M -30 0 H -14 M 14 0 H 30 M 0 -30 V -14 M 0 14 V 30" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="800" y="505" fill="#ffffff" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="7" text-anchor="middle">AREA</text>
+
+  <!-- Action nodes -->
+  <g filter="url(#nodeShadow)">
+    <rect x="1144" y="192" width="136" height="136" rx="34" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <g transform="translate(1212 260)" stroke="#8b5cf6" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <rect x="-28" y="-26" width="56" height="52" rx="8"/>
+    <path d="M -28 -12 H 28 M -14 -26 V -34 M 14 -26 V -34"/>
+    <circle cx="-12" cy="4" r="3" fill="#8b5cf6" stroke="none"/>
+    <circle cx="4" cy="4" r="3" fill="#8b5cf6" stroke="none"/>
+    <circle cx="20" cy="4" r="3" fill="#8b5cf6" stroke="none"/>
+    <circle cx="-12" cy="18" r="3" fill="#8b5cf6" stroke="none"/>
+    <circle cx="4" cy="18" r="3" fill="#8b5cf6" stroke="none"/>
+  </g>
+
+  <g filter="url(#nodeShadow)">
+    <rect x="1144" y="382" width="136" height="136" rx="34" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <g transform="translate(1212 450)" stroke="#22d3ee" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <path d="M -26 -18 L -8 0 L -26 18"/>
+    <path d="M 26 -18 L 8 0 L 26 18"/>
+    <path d="M 6 -30 L -6 30"/>
+  </g>
+
+  <g filter="url(#nodeShadow)">
+    <rect x="1144" y="572" width="136" height="136" rx="34" fill="url(#glass)" stroke="#ffffff" stroke-opacity="0.14"/>
+  </g>
+  <g transform="translate(1212 640)" stroke="#f59e0b" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)">
+    <path d="M -30 8 A 16 16 0 0 1 -14 -20 A 24 24 0 0 1 32 -12 A 14 14 0 0 1 30 8 Z"/>
+    <path d="M -12 20 V 30 M 0 18 V 32 M 12 20 V 30"/>
+  </g>
+
+  <!-- Floating particles -->
+  <g fill="#ffffff">
+    <circle cx="470" cy="210" r="3" opacity="0.45"/>
+    <circle cx="640" cy="700" r="2.5" opacity="0.35"/>
+    <circle cx="980" cy="160" r="2.5" opacity="0.4"/>
+    <circle cx="1080" cy="760" r="3" opacity="0.3"/>
+    <circle cx="1380" cy="520" r="2.5" opacity="0.35"/>
+    <circle cx="200" cy="300" r="2.5" opacity="0.3"/>
+    <circle cx="720" cy="760" r="2" opacity="0.3"/>
+  </g>
+</svg>

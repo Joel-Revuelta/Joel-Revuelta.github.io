@@ -48,32 +48,40 @@ export const projects: Project[] = [
     subtitle: 'Winner project of the 2024 Extia Hackathon.',
     description: 'Developed an Angular-based web application that uses AI to match users with their ideal city based on personalized criteria such as cost of living, weather, job opportunities, and lifestyle preferences.',
     image: '/CityMatcher.png',
-    techIcon: '/Angular.ico',
-    techAlt: 'Angular',
+    techIcons: [{ image: '/Angular.ico', alt: 'Angular' }],
     link: 'https://joel-revuelta.github.io/CityMatcher'
   },
   {
-    title: 'RayTracer',
-    description: 'A 3D rendering engine that simulates light behavior to generate photorealistic images. It traces rays from a virtual camera and computes their interactions with scene objects, materials, and lights to determine color and shading.',
-    image: '/RayTracer.png',
-    techIcon: '/C++.png',
-    techAlt: 'C++',
-    link: 'https://github.com/Joel-Revuelta/ray-tracer'
+    title: 'AREA',
+    subtitle: 'Epitech team project — Fullstack Developer.',
+    description: 'An IFTTT-style automation platform built as a five-person team project. Connect services through OAuth2, then link Actions to REActions in a visual editor to automate workflows. FastAPI microservices with PostgreSQL handle the backend, a Next.js web client provides the dashboard, and a React Native app brings it to Android — all orchestrated with Docker Compose.',
+    image: '/Area.svg',
+    techIcons: [
+      { image: '/Nextjs.png', alt: 'Next.js' },
+      { image: '/fastapi.svg', alt: 'FastAPI' },
+      { image: '/Docker.png', alt: 'Docker' }
+    ],
+    link: 'https://github.com/Joel-Revuelta/area'
   },
   {
-    title: 'Torch',
-    description: 'Developed a neural network-based chessboard analyzer that generates, trains, and predicts game states from chess positions using FEN notation.',
-    image: '/neural.avif',
-    techIcon: '/Python.png',
-    techAlt: 'Python',
-    link: 'https://github.com/Joel-Revuelta/Torch'
+    title: 'RayTracer',
+    description: 'A C++20 path tracer with a plugin architecture: primitives, materials, lights, GUI backends and renderers all load at runtime. It ships with a multithreaded CPU renderer and a CUDA GPU renderer with full feature parity, plus interactive SFML and OpenGL previewers. BVH acceleration, OBJ/MTL meshes, textures, environment lighting, depth of field and area lights power the 34 included scenes, rendered up to 8K.',
+    image: '/RayTracer.webp',
+    techIcons: [{ image: '/C++.png', alt: 'C++' }],
+    link: 'https://github.com/Joel-Revuelta/ray-tracer'
   },
   {
     title: 'Syscall Sandbox',
     description: 'A Linux syscall sandbox combining an eBPF monitor, a kernel module, and ptrace to observe, track, and block system calls across entire process trees. Hooks the raw_syscalls and sched_process_fork tracepoints and exposes control through /proc/syscall_sandbox.',
     image: '/Linux-kernel.png',
-    techIcon: '/C.png',
-    techAlt: 'C',
+    techIcons: [{ image: '/C.png', alt: 'C' }],
     link: 'https://github.com/Joel-Revuelta/syscall-sandbox'
+  },
+  {
+    title: 'Torch',
+    description: 'Developed a neural network-based chessboard analyzer that generates, trains, and predicts game states from chess positions using FEN notation.',
+    image: '/neural.avif',
+    techIcons: [{ image: '/Python.png', alt: 'Python' }],
+    link: 'https://github.com/Joel-Revuelta/Torch'
   }
 ];
