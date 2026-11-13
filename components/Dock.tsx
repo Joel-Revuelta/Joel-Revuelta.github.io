@@ -1,50 +1,106 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useEffect, useState } from 'react';
-import { dockItems } from '../data';
+import type { ReactNode } from "react";
+import { useActiveSection } from "../hooks/useActiveSection";
+
+type IconName = "home" | "work" | "experience" | "education" | "stack" | "contact";
+
+const paths: Record<IconName, ReactNode> = {
+  home: (
+    <>
+      <path d="M3 10.5 12 3l9 7.5" />
+      <path d="M5 9.5V21h14V9.5" />
+    </>
+  ),
+  work: (
+    <>
+      <path d="m8 8-4 4 4 4" />
+      <path d="m16 8 4 4-4 4" />
+      <path d="M13 5l-2 14" />
+    </>
+  ),
+  experience: (
+    <>
+      <rect x="3" y="7" width="18" height="13" rx="2" />
+      <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+      <path d="M3 12h18" />
+    </>
+  ),
+  education: (
+    <>
+      <path d="m2 9 10-5 10 5-10 5-10-5Z" />
+      <path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5" />
+      <path d="M22 9v5" />
+    </>
+  ),
+  stack: (
+    <>
+      <path d="m12 3 9 5-9 5-9-5 9-5Z" />
+      <path d="m3 12 9 5 9-5" />
+      <path d="m3 16 9 5 9-5" />
+    </>
+  ),
+  contact: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </>
+  ),
+};
+
+const items: { label: string; id: string; icon: IconName }[] = [
+  { label: "Home", id: "home", icon: "home" },
+  { label: "Work", id: "projects", icon: "work" },
+  { label: "Experience", id: "experience", icon: "experience" },
+  { label: "Education", id: "education", icon: "education" },
+  { label: "Stack", id: "stack", icon: "stack" },
+  { label: "Contact", id: "contact", icon: "contact" },
+];
+
+const sectionIds = ["home", "projects", "experience", "education", "stack", "contact"];
 
 export default function Dock() {
-  const [showDock, setShowDock] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      if (currentScrollY > lastScrollY) {
-        setShowDock(false); // scrolling down
-      } else {
-        setShowDock(true); // scrolling up
-      }
-      
-      setLastScrollY(currentScrollY <= 0 ? 0 : currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  const active = useActiveSection(sectionIds);
 
   return (
-    <div className={`fixed bottom-0 left-0 w-full flex justify-center pb-6 transition-all duration-300 z-50 ${showDock ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0 pointer-events-none'}`}>
-      <div className="absolute bottom-0 left-0 w-full h-[100px] backdrop-blur-sm bg-black/10 -z-10 pointer-events-none [mask-image:linear-gradient(to_top,black,transparent)]" />
-      
-      <div className="flex gap-2 md:gap-4 p-3 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-2xl shadow-xl shadow-black/50">
-        {dockItems.map((item, idx) => (
-          <a 
-            key={idx} 
-            href={item.href}
-            aria-label={`Navigate to ${item.label} section`}
-            className="flex flex-col items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-xl hover:bg-white/10 transition-colors group relative"
-          >
-            {/* Tooltip */}
-            <span className="absolute -top-12 bg-zinc-800 border border-zinc-700 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-lg">
-              {item.label}
-            </span>
-            <img src={item.icon} alt={item.label} className="w-8 h-8 md:w-10 md:h-10 svg-white group-hover:scale-110 transition-transform" />
-          </a>
-        ))}
+    <nav
+      aria-label="Sections"
+      className="fixed inset-x-0 bottom-0 z-50 flex justify-center px-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden"
+    >
+      <div className="flex items-center gap-0.5 rounded-2xl border border-line bg-surface/95 p-1.5 shadow-xl shadow-black/50 backdrop-blur-md">
+        {items.map((item) => {
+          const isActive = active === item.id;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              aria-label={item.label}
+              aria-current={isActive ? "location" : undefined}
+              className={`flex h-[52px] w-[46px] flex-col items-center justify-center gap-1 rounded-xl transition-colors min-[380px]:w-[54px] ${
+                isActive
+                  ? "bg-accent/10 text-accent"
+                  : "text-muted hover:text-foreground"
+              }`}
+            >
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                {paths[item.icon]}
+              </svg>
+              <span className="hidden text-[9px] font-medium leading-none min-[380px]:block">
+                {item.label}
+              </span>
+            </a>
+          );
+        })}
       </div>
-    </div>
+    </nav>
   );
 }

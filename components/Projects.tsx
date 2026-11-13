@@ -10,45 +10,85 @@ export default function Projects() {
 
   const INITIAL_LIMIT = 4;
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_LIMIT);
+  const remaining = projects.length - INITIAL_LIMIT;
 
   return (
-    <section id="projects" className="scroll-mt-24">
-      <SectionTitle>Projects</SectionTitle>
+    <section id="projects" className="mt-28 scroll-mt-24 md:mt-36">
+      <SectionTitle>Selected work</SectionTitle>
+      <p className="-mt-4 mb-8 max-w-xl text-sm leading-relaxed text-muted md:-mt-6 md:mb-10">
+        Five projects across rendering, systems and the web.
+      </p>
 
-      <div className="flex flex-col gap-8">
+      <div id="project-list" className="flex flex-col gap-10">
         {visibleProjects.map((project) => (
-          <div key={project.title} className="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden shadow-sm">
-            <div className="border-b border-zinc-800/70">
+          <a
+            key={project.title}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View the ${project.title} project (opens in a new tab)`}
+            className="group block overflow-hidden rounded-2xl border border-line bg-surface transition-colors hover:border-white/15"
+          >
+            <div className="overflow-hidden border-b border-line">
               <img
                 src={project.image}
-                className="block w-full h-auto bg-[#1a1a1a]"
+                width={project.imageWidth}
+                height={project.imageHeight}
                 alt={`${project.title} project cover`}
                 loading="lazy"
                 decoding="async"
+                className="block h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.02] motion-reduce:transform-none"
               />
             </div>
+
             <div className="p-6 md:p-8">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2 text-white">{project.title}</h2>
+                  <h3 className="text-2xl font-medium tracking-tight text-foreground">
+                    {project.title}
+                  </h3>
                   {project.subtitle && (
-                    <p className="text-gray-400 font-medium">{project.subtitle}</p>
+                    <p className="mt-2 text-sm text-muted">{project.subtitle}</p>
                   )}
                 </div>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View the ${project.title} project`} className="shrink-0 p-2 hover:bg-zinc-800 rounded-lg transition-colors flex items-center justify-center">
-                  <svg className="w-5 h-5 text-gray-400 hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-colors group-hover:border-accent/50 group-hover:text-accent"
+                >
+                  <svg
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M7 17 17 7M8 7h9v9" />
                   </svg>
-                </a>
+                </span>
               </div>
-              <p className="text-gray-300 leading-relaxed max-w-2xl mt-3 mb-6">{project.description}</p>
-              <div className="flex items-center gap-3">
+
+              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-foreground/75">
+                {project.description}
+              </p>
+
+              <div className="mt-6 flex items-center gap-2.5">
                 {project.techIcons.map((icon) => (
-                  <img key={icon.image} src={icon.image} alt={icon.alt} className="h-8" />
+                  <span
+                    key={icon.image}
+                    className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/95 p-1"
+                  >
+                    <img
+                      src={icon.image}
+                      alt={icon.alt}
+                      className="h-full w-full object-contain"
+                    />
+                  </span>
                 ))}
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
@@ -56,23 +96,34 @@ export default function Projects() {
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded-full text-white font-medium transition-colors shadow-sm"
+            aria-expanded={showAll}
+            aria-controls="project-list"
+            className="rounded-full border border-line bg-surface px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
           >
-            {showAll ? 'Show Less' : `Show More Projects (${projects.length - INITIAL_LIMIT})`}
+            {showAll ? 'Show less' : `Show ${remaining} more ${remaining === 1 ? 'project' : 'projects'}`}
           </button>
         </div>
       )}
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-10 flex justify-center">
         <a
           href="https://github.com/Joel-Revuelta"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 font-mono text-xs text-muted transition-colors hover:text-accent"
         >
-          See more projects on GitHub
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          All repositories on GitHub
+          <svg
+            className="h-3.5 w-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
       </div>

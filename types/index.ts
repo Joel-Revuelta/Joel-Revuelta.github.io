@@ -3,10 +3,9 @@ export interface StackItem {
   image: string;
 }
 
-export interface DockItem {
-  label: string;
-  icon: string;
-  href: string;
+export interface StackGroup {
+  title: string;
+  items: StackItem[];
 }
 
 export interface TechIcon {
@@ -19,7 +18,8 @@ export interface Project {
   subtitle?: string;
   description: string;
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   techIcons: TechIcon[];
   link: string;
 }
-
