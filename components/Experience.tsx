@@ -22,7 +22,7 @@ export default function Experience() {
             </span>
             <div>
               <h3 className="text-xl font-medium tracking-tight text-foreground">
-                Web Developer Intern
+                Software Developer Intern
               </h3>
               <p className="mt-1 text-sm text-muted">NTT Data</p>
             </div>
