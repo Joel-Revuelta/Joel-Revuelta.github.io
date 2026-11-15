@@ -110,12 +110,16 @@ export const projects: Project[] = [
   },
   {
     title: 'City Matcher',
-    subtitle: 'Winner project of the 2024 Extia Hackathon.',
-    description: 'Developed an Angular-based web application that uses AI to match users with their ideal city based on personalized criteria such as cost of living, weather, job opportunities, and lifestyle preferences.',
+    subtitle: 'Winner of the 2024 Extia Hackathon. Rebuilt as a production-grade relocation decision engine.',
+    description: 'City Matcher ranks 42 European cities against a personal brief covering budget, climate, safety, healthcare, work and walkability. The matching engine is deterministic and versioned: climate comes from Open-Meteo, country context from the World Bank and costs from a transparent model. It includes a searchable city index, side-by-side comparison, climate charts, city sheets and an anonymous local shortlist. Built with Next.js, React, TypeScript and Tailwind CSS; optional AI parses natural language but never invents a city score.',
     image: '/CityMatcher.webp',
     imageWidth: 1623,
     imageHeight: 937,
-    techIcons: [{ image: '/Angular.ico', alt: 'Angular' }],
-    link: 'https://joel-revuelta.github.io/CityMatcher'
+    techIcons: [
+      { image: '/Nextjs.png', alt: 'Next.js' },
+      { image: '/TypeScript.png', alt: 'TypeScript' },
+      { image: '/icons/ai.svg', alt: 'AI integration' }
+    ],
+    link: 'https://github.com/Joel-Revuelta/CityMatcher'
   }
 ];
