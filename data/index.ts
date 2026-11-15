@@ -120,6 +120,6 @@ export const projects: Project[] = [
       { image: '/TypeScript.png', alt: 'TypeScript' },
       { image: '/icons/ai.svg', alt: 'AI integration' }
     ],
-    link: 'https://github.com/Joel-Revuelta/CityMatcher'
+    link: 'https://city-matcher-sigma.vercel.app'
   }
 ];
